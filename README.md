@@ -1,6 +1,7 @@
 # Toggl and Google SpreadSheet integration
 
-Docs on `setup.gs`
+GoogelScript para atualizar automaticamente sua planilha de horas do google sheets
+com suas horas do Toggle.
 
 
 ## Instalação
