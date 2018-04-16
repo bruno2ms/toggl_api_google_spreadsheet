@@ -1,13 +1,8 @@
-// Acesse o menu na aba da sua Planilha de Jornada de Horas
-// Ferramentas > Editor de Script
-// Cole e salve este script, o Google provavelmente pedirá permissão de execução do script
-
-// Acesse as configurações do Toggl no endereço https://toggl.com/app/profile
-// Copie a sua apiToken
-// Substitua aqui as variáveis necessárias
+// Sua token para acesar a API do toggle
+// pode ser obtida em: https://toggl.com/app/profile
 var apiToken = 'xxxxxxxxxxxxxxxxxxxxxxxxxx';
 
-// Para obter os id`s de workspace e clientes, acesse a página reports, selecione o workspace e cliente e aplice o filtro
+// Para obter os id's de workspace e clientes, acesse a página reports, selecione o workspace e cliente e aplice o filtro
 // Você será redirecionado para a página com a seguinte url:
 // https://toggl.com/app/reports/summary/[WORKSPACE_ID]/period/thisWeek/clients/CLIENTS_ID/billable/both
 var workspace_id = 'xxxxxxxxxxxxxxxxxxxxxxxxxx';
