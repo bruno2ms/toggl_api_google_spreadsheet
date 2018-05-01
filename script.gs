@@ -31,8 +31,8 @@ function onOpen() {
 
 // Menu functions
 function __init() {
-  verifyMostRecentSheet();
   getSheetData();
+  verifyMostRecentSheet();
 }
 
 function __atualizaAtual() {
