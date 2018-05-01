@@ -101,7 +101,7 @@ function getEntries(dataInicial, dataFinal, page) {
   var queryString = '?workspace_id=' + workspace_id;
   queryString += '&since=' + dataInicial;
   queryString += '&until=' + dataFinal;
-  if (clients_id) {
+  if (clients_id != undefined) {
     queryString += '&client_ids=' + clients_id;
   }
   queryString += '&page=' + page;
