@@ -59,6 +59,10 @@ function createNewSheet(today, periodo) {
   var target_range = sheet.getRange('A1:G1');
   source_range.copyTo(target_range);
 
+  ss.setColumnWidth(1,7,100);
+  ss.setColumnWidth(2,500);
+  ss.setColumnWidth(7,150);
+
   sendSheetCreationNotification(name);
 }
 
