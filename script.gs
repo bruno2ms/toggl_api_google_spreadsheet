@@ -154,8 +154,8 @@ function preencheTabela(response, page) {
 
     sheet.getRange(i, COLS.DATA).setValue(Utilities.formatDate(new Date(time.start), TIMEZONE, 'dd/MM/yyyy'));
     sheet.getRange(i, COLS.DESC).setValue(time.description);
-    sheet.getRange(i, COLS.INICIO).setValue(Utilities.formatDate(new Date(time.start), TIMEZONE, 'hh:mm:ss'));
-    sheet.getRange(i, COLS.FIM).setValue(Utilities.formatDate(new Date(time.end), TIMEZONE, 'hh:mm:ss'));
+    sheet.getRange(i, COLS.INICIO).setValue(Utilities.formatDate(new Date(time.start), TIMEZONE, 'HH:mm:ss'));
+    sheet.getRange(i, COLS.FIM).setValue(Utilities.formatDate(new Date(time.end), TIMEZONE, 'HH:mm:ss'));
     sheet.getRange(i, COLS.DURACAO).setValue(msToTime(time.dur));
   });
 
