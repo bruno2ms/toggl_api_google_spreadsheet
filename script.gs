@@ -123,7 +123,7 @@ function getEntries(dataInicial, dataFinal, page) {
     preencheTabela(response, page);
 
     Logger.log(url + queryString);
-    Logger.log('Resultados: ' + response.data.lentgh);
+    Logger.log('Resultados: ' + response.data.lenght);
 
     // verifica se há mais itens do que foi listado até o momento
     if (response.total_count > page * response.per_page) {
@@ -141,13 +141,16 @@ function adicionaErro(erro) {
 }
 
 function preencheTabela(response, page) {
+
+  var numEntries = response.data.length;
+  
   if (page == 1) {
     sheet.getRange('A2:E200').clear();
     sheet.getRange('G1:G3').clear();
   }
 
   response.data.forEach(function(time, index) {
-    var i = index + ( (page -1) *response.per_page ) + 2;
+    var i = numEntries - (index + ((page -1) * response.per_page)) + 1;
     const COLS = {
       DATA: 1,
       DESC: 2,
