@@ -74,7 +74,7 @@ function getSheetnameData(sheet) {
   return {
     sheetName: sheetName,
     dataInicial: new Date(ano, mes, 1),
-    dataFinal: new Date(ano, mes + 1, 1)
+    dataFinal: new Date(ano, mes + 1, 0)
   }
 }
 
@@ -108,8 +108,11 @@ function getEntries(dataInicial, dataFinal, page) {
   if (clients_id != undefined) {
     queryString += '&client_ids=' + clients_id;
   }
+  queryString += '&order_field=date&order_desc=false'
   queryString += '&page=' + page;
   queryString += '&user_agent=api_test';
+  
+  Logger.log(url + queryString)
 
   try {
     var result = UrlFetchApp.fetch(url + queryString, options);
@@ -141,8 +144,6 @@ function adicionaErro(erro) {
 }
 
 function preencheTabela(response, page) {
-
-  var numEntries = response.total_count;
   
   if (page == 1) {
     sheet.getRange('A2:E200').clear();
@@ -150,7 +151,7 @@ function preencheTabela(response, page) {
   }
 
   response.data.forEach(function(time, index) {
-    var i = numEntries - (index + ((page -1) * response.per_page)) + 1;
+    var i = index + ((page -1) * response.per_page ) + 2;
     const COLS = {
       DATA: 1,
       DESC: 2,
