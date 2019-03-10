@@ -142,7 +142,7 @@ function adicionaErro(erro) {
 
 function preencheTabela(response, page) {
 
-  var numEntries = response.data.length;
+  var numEntries = response.total_count;
   
   if (page == 1) {
     sheet.getRange('A2:E200').clear();
