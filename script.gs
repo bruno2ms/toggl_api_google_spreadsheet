@@ -43,7 +43,7 @@ function __atualizaAtual() {
 function verifyMostRecentSheet() {
   var periodo = getSheetnameData(sheet);
   var today = new Date();
-  if (today > periodo.dataFinal) {
+  if (today.getMonth() > periodo.dataFinal.getMonth()) {
     createNewSheet(today, periodo)
   }
 }
@@ -59,7 +59,7 @@ function createNewSheet(today, periodo) {
   var target_range = sheet.getRange('A1:G1');
   source_range.copyTo(target_range);
 
-  ss.setColumnWidth(1,7,100);
+  ss.setColumnWidths(1,7,100);
   ss.setColumnWidth(2,500);
   ss.setColumnWidth(7,150);
 
