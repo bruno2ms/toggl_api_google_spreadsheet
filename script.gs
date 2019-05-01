@@ -126,7 +126,7 @@ function getEntries(dataInicial, dataFinal, page) {
     preencheTabela(response, page);
 
     Logger.log(url + queryString);
-    Logger.log('Resultados: ' + response.data.lenght);
+    Logger.log('Resultados: ' + response.data.length);
 
     // verifica se há mais itens do que foi listado até o momento
     if (response.total_count > page * response.per_page) {
@@ -144,7 +144,6 @@ function adicionaErro(erro) {
 }
 
 function preencheTabela(response, page) {
-  // var numEntries = response.data.length;
   
   if (page == 1) {
     sheet.getRange('A2:E200').clear();
