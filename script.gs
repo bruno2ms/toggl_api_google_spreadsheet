@@ -43,7 +43,7 @@ function __atualizaAtual() {
 function verifyMostRecentSheet() {
   var periodo = getSheetnameData(sheet);
   var today = new Date();
-  if (today.getMonth() > periodo.dataFinal.getMonth() || today.getYear() > periodo.dataFinal.getMonth()) {
+  if (today.getMonth() > periodo.dataFinal.getMonth() || today.getYear() > periodo.dataFinal.getYear()) {
     createNewSheet(today, periodo)
   }
 }
