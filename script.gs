@@ -43,7 +43,7 @@ function __atualizaAtual() {
 function verifyMostRecentSheet() {
   var periodo = getSheetnameData(sheet);
   var today = new Date();
-  if (today.getMonth() > periodo.dataFinal.getMonth()) {
+  if (today.getMonth() > periodo.dataFinal.getMonth() || today.getYear() > periodo.dataFinal.getYear()) {
     createNewSheet(today, periodo)
   }
 }
@@ -108,7 +108,7 @@ function getEntries(dataInicial, dataFinal, page) {
   if (clients_id != undefined) {
     queryString += '&client_ids=' + clients_id;
   }
-  queryString += '&order_field=date&order_desc=false'
+  queryString += '&order_field=date&order_desc=true'
   queryString += '&page=' + page;
   queryString += '&user_agent=api_test';
   
@@ -144,7 +144,7 @@ function adicionaErro(erro) {
 }
 
 function preencheTabela(response, page) {
-  
+
   if (page == 1) {
     sheet.getRange('A2:E200').clear();
     sheet.getRange('G1:G3').clear();
