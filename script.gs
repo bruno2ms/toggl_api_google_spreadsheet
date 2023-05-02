@@ -101,7 +101,7 @@ function getEntries(dataInicial, dataFinal, page) {
     "headers":headers
   };
 
-  var url = 'https://toggl.com/reports/api/v2/details';
+  var url = 'https://api.toggl.com/reports/api/v2/details';
   var queryString = '?workspace_id=' + workspace_id;
   queryString += '&since=' + dataInicial;
   queryString += '&until=' + dataFinal;
